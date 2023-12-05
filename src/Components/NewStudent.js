@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Base from "../Base/Base";
 import { useParams } from "react-router-dom";
+import { IconButton, Snackbar } from "@mui/material";
 
 function NewStudent({ students, setStudents, mentors }) {
   const { id } = useParams(); //mentor Id
@@ -9,6 +10,70 @@ function NewStudent({ students, setStudents, mentors }) {
   console.log(mentors)
 
   const history = useHistory();
+
+//Snack Bar
+const [open, setOpen] = useState(false);
+
+const handleClick = async() => {
+  setOpen(true);
+};
+
+const handleClose = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+
+  setOpen(false);
+};
+
+// const action = (
+//   <React.Fragment>
+//     {/* <Button color="warning" size="small" onClick={handleClose}>
+//       UNDO
+//     </Button> */}
+//     <IconButton
+//       size="small"
+//       aria-label="close"
+//       color="warning"
+//       onClick={handleClose}
+//     >
+//     Close
+//     </IconButton>
+//   </React.Fragment>
+// );
+//Snack Bar Ends
+
+//Snack Bar 2
+const [openn, setOpenn] = useState(false);
+
+const handleClickk = async() => {
+  setOpenn(true);
+};
+
+const handleClosee = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+
+  setOpenn(false);
+};
+
+// const actionn = (
+//   <React.Fragment>
+//     {/* <Button color="warning" size="small" onClick={handleClose}>
+//       UNDO
+//     </Button> */}
+//     <IconButton
+//       size="small"
+//       aria-label="close"
+//       color="warning"
+//       onClick={handleClosee}
+//     >
+//     Close
+//     </IconButton>
+//   </React.Fragment>
+// );
+//Snack Bar Ends
 
   useEffect(() => {
     const getStudentDetails = async () => {
@@ -69,6 +134,10 @@ function NewStudent({ students, setStudents, mentors }) {
           ...prevData,
           myStudents: old_array
         }));
+        await handleClickk()
+      }
+      else {
+        await handleClick()
       }
     } catch (error) {
       console.log(error);
@@ -111,6 +180,23 @@ function NewStudent({ students, setStudents, mentors }) {
           </div>
         )}
 
+      {/* Snack Bar */}
+      <Snackbar
+        open={open}
+        autoHideDuration={900}
+        onClose={handleClose}
+        message="Already Added...!"
+        // action={action}
+      />
+
+      {/* Snack Bar */}
+      <Snackbar
+        open={openn}
+        autoHideDuration={900}
+        onClose={handleClosee}
+        message="Added Successfully..."
+        // action={actionn}
+      />
 
       </div>
 

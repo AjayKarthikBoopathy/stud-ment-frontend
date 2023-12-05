@@ -2,10 +2,48 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Base from "../../Base/Base";
 import { useParams } from "react-router-dom";
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import { Button, IconButton, Snackbar } from "@mui/material";
+
+
 
 function MyStudents({ students }) {
   const { id } = useParams(); //mentor Id
   const [mentorss, setMentorss] = useState([]);
+
+  //Snack Bar
+const [open, setOpen] = useState(false);
+
+const handleClick = async() => {
+  setOpen(true);
+};
+
+const handleClose = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+
+  setOpen(false);
+  //history.push("/students")
+};
+
+const action = (
+  <React.Fragment>
+    {/* <Button color="warning" size="small" onClick={handleClose}>
+      UNDO
+    </Button> */}
+    <IconButton
+      size="small"
+      aria-label="close"
+      color="warning"
+      onClick={handleClose}
+    >
+    Close
+    </IconButton>
+  </React.Fragment>
+);
+//Snack Bar Ends
 
   //fetch
   useEffect(()=>{
@@ -55,6 +93,7 @@ function MyStudents({ students }) {
         ...prevData,
         myStudents: updated_array
       }));
+      await handleClick()
     } catch (error) {
       console.log(error);
     }
@@ -95,6 +134,16 @@ function MyStudents({ students }) {
             ))}
           </div>
         )}
+
+        {/* Snack Bar */}
+        <Snackbar
+        open={open}
+        autoHideDuration={1400}
+        onClose={handleClose}
+        message="Removed Successfully..."
+        action={action}
+      />
+
       </div>
     </Base>
   );
