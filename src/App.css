@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .heading{
@@ -22,6 +23,7 @@
   height: 75%;
   padding-left: 150px;
   padding-top: 20px;
+  
 }
 
 .card{
@@ -36,6 +38,7 @@
   background-color: rgb(161, 183, 255);
   border-radius: 15px;
   padding-top: 10px;
+  box-shadow: 10px 10px 10px lightslategray;
 }
 
 .card2{
@@ -50,6 +53,7 @@
   background-color: rgb(255, 165, 185);
   border-radius: 15px;
   padding-top: 10px;
+  box-shadow: 10px 10px 10px lightslategray;
 }
 
 .card-container{
@@ -77,6 +81,7 @@
   padding-right: 90px;
   box-sizing: border-box;
   background-color: rgb(204, 95, 95);
+  box-shadow: 0px 5px 10px lightslategray;
 }
 
 .newuser{
@@ -99,7 +104,11 @@
   background-color: rgb(163, 62, 62);
   color: white;
   border-radius: 5px;
+  border-color: rgb(172, 34, 34);
   padding: 5px;
+  /* box-shadow: 2px 8px 18px 16px lightgray; */
+  box-shadow: 1px 4px 7px 2px rgb(182, 182, 182);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .newuser-button2{
@@ -110,9 +119,11 @@
   padding-top: 6px;
   padding-bottom: 6px;
   margin-top: 10px;
-  margin-left: 60px;
+  margin-left: 24px;
   width: 480;
   border-color: rgb(155, 129, 91);
+  box-shadow: 1px 4px 7px 2px rgb(182, 182, 182);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .btn{
@@ -122,6 +133,7 @@
   padding: 5px;
   margin-left: 2px;
   margin-right: 2px;
+  min-width: 70px;
 }
 
 .add-button, .edit-button{
@@ -141,11 +153,16 @@
 }
 
 .portal{
-  letter-spacing: 3px;
+  letter-spacing: 5px;
+  color: rgb(255, 228, 179);
+  font-weight: bold;
+
+
 }
 
 .my-stud{
   letter-spacing: 2px;
+  color: rgb(43, 43, 71);
 }
 
 .mycard-outer{
@@ -169,6 +186,7 @@
   background-color: rgb(161, 183, 255);
   border-radius: 15px;
   padding-top: 10px;
+  box-shadow: 1px 6px 10px 4px rgb(182, 182, 182);
 }
 
 .mycard3{
@@ -184,13 +202,18 @@
   background-color: rgb(255, 165, 185);
   border-radius: 15px;
   padding-bottom: 6px;
+  box-shadow: 1px 6px 10px 4px rgb(182, 182, 182);
 }
 
 .my-btn{
   background-color: rgb(194, 183, 28); 
   border-radius: 5px;
-  border-width: 1.8px;
+  border-width: 2.8px;
+  border-color: rgb(146, 138, 26); ;
   padding: 5px;
   margin-bottom: 8px;
   width: 100px;
+  font-weight: 540;
+  color: rgb(37, 32, 32);
+
 }

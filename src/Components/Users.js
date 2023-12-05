@@ -50,8 +50,8 @@ function Users({students,setStudents}) {
                             <button className="my-btn" onClick={()=>history.push(`/students/my-mentors/${stud._id}`)}>View Mentor</button>
                           </div>
 
-                            <button className="btn" onClick={()=>history.push(`/students/edit/${stud._id}`)}>Edit</button> {" "}
-                            <button className="btn" onClick={()=>deleteUser(stud._id)}>Delete</button>
+                            <button className="btn" onClick={()=>history.push(`/students/edit/${stud._id}`)}>🖊 Edit</button> {" "}
+                            <button className="btn" onClick={()=>deleteUser(stud._id)}>🗑 Delete</button>
                         </div>
                         
                   </div>

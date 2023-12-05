@@ -52,8 +52,8 @@ function Mentors({mentors,setMentors}) {
                             <button className="my-btn" onClick={()=>history.push(`/mentors/my-students/${stud._id}`)}>View Students</button>
                           </div>
 
-                            <button className="btn" onClick={()=>history.push(`/mentors/edit/${stud._id}`)}>Edit</button> {" "}
-                            <button className="btn" onClick={()=>deleteMentor(stud._id)}>Delete</button>
+                            <button className="btn" onClick={()=>history.push(`/mentors/edit/${stud._id}`)}>🖊 Edit</button> {" "}
+                            <button className="btn" onClick={()=>deleteMentor(stud._id)}>🗑 Delete</button>
                         </div>
                         
                   </div>
