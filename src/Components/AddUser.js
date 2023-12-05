@@ -22,7 +22,7 @@ function AddUser({students,setStudents}) {
             //console.log(newUser)
 
 
-          const res = await fetch(`http://localhost:9090/students/add`, {
+          const res = await fetch(`https://stud-ment-backend.onrender.com/students/add`, {
             method:"POST",
             body:JSON.stringify(newUser),
             headers:{
@@ -43,22 +43,6 @@ function AddUser({students,setStudents}) {
         }
       }
 
-
-    // const createUser = () => {
-    //     //creating object from input states
-    //     const newUser = {
-    //         name:name,
-    //         batch:batch,
-    //         gender,
-    //         education:qualification
-    //     }
-    //     //console.log(newUser)
-    //     setS([...userdata, newUser])
-    //     setName("")
-    //     setBatch("")
-    //     setGender("")
-    //     setQualification("")
-    //     history.push("/")
     
 
     return (

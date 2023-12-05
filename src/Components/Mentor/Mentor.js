@@ -1,37 +1,19 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Base from "../../Base/Base";
-//import data from './Data/data';
 
 
 function Mentors({mentors,setMentors}) {
-    //const [userdata, setUserdata] = useState(data)
+
     console.log(mentors);
-    //const [editIdx, setEditIdx] = useState();
     
     const history = useHistory();
-
-    useEffect(()=>{
-        const getMentorDetails = async()=>{
-          
-          const res = await fetch(`http://localhost:9090/mentors/all`, {       
-            method: "GET",
-        }); 
-          const data = await res.json();
-          //console.log(data.data)
-          setMentors(data.data)
-        }
-        
-          getMentorDetails()
-        
-    
-      }, [])
-    
+   
 
     //delete
     const deleteMentor= async (studentId)=>{
         try {
-          const res = await fetch(`http://localhost:9090/mentors/delete/${studentId}`, {
+          const res = await fetch(`https://stud-ment-backend.onrender.com/mentors/delete/${studentId}`, {
             method:"DELETE"
           });
           const data = await res.json()

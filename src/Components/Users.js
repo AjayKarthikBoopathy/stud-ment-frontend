@@ -1,37 +1,18 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Base from "../Base/Base";
-//import data from './Data/data';
 
 
 function Users({students,setStudents}) {
-    //const [userdata, setUserdata] = useState(data)
+    
     console.log(students);
-    //const [editIdx, setEditIdx] = useState();
     
     const history = useHistory();
-
-    useEffect(()=>{
-        const getStudentDetails = async()=>{
-          
-          const res = await fetch(`http://localhost:9090/students/all`, {       
-            method: "GET",
-        }); 
-          const data = await res.json();
-          //console.log(data.data)
-          setStudents(data.data)
-        }
-        
-          getStudentDetails()
-        
-    
-      }, [])
-    
 
     //delete
     const deleteUser = async (studentId)=>{
         
-          const res = await fetch(`http://localhost:9090/students/delete/${studentId}`, {
+          const res = await fetch(`https://stud-ment-backend.onrender.com/students/delete/${studentId}`, {
             method:"DELETE"
           });
           const data = await res.json()

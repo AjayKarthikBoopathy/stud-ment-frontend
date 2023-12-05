@@ -28,18 +28,7 @@ function UpdateMentor({mentors, setMentors}) {
        }
     }, [id, mentors])
 
-    // function updateUser() {
-    //     const updatedObject = {
-    //         name : name,
-    //         batch : batch,
-    //         gender : gender,
-    //         qualification : qualification
-    //     }
-    //     console.log(updatedObject)
-    //     userdata[id] = updatedObject
-    //     setUserdata([...userdata])
-    //     history.push("/")
-    // }
+    
 
 //
 const updateMentor = async ()=>{
@@ -52,7 +41,7 @@ const updateMentor = async ()=>{
         education : education
     }
 
-    const response = await fetch(`http://localhost:9090/mentors/edit/${id}`,{
+    const response = await fetch(`https://stud-ment-backend.onrender.com/mentors/edit/${id}`,{
       method:"PUT",
       body:JSON.stringify(updatedMentor),
       headers:{

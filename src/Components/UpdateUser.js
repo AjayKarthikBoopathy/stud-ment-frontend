@@ -28,19 +28,7 @@ function UpdateUser({students, setStudents}) {
        }
     }, [id, students])
 
-    // function updateUser() {
-    //     const updatedObject = {
-    //         name : name,
-    //         batch : batch,
-    //         gender : gender,
-    //         qualification : qualification
-    //     }
-    //     console.log(updatedObject)
-    //     userdata[id] = updatedObject
-    //     setUserdata([...userdata])
-    //     history.push("/")
-    // }
-
+   
 //
 const updateUser = async ()=>{
     try {
@@ -52,7 +40,7 @@ const updateUser = async ()=>{
         education : education
     }
 
-    const response = await fetch(`http://localhost:9090/students/edit/${id}`,{
+    const response = await fetch(`https://stud-ment-backend.onrender.com/students/edit/${id}`,{
       method:"PUT",
       body:JSON.stringify(updatedStudent),
       headers:{
@@ -69,7 +57,6 @@ const updateUser = async ()=>{
     students[studIndex] = data
 
     await setStudents([...students])
-    //navigate("/students/all")
     history.push("/students/all")
 
       

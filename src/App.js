@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Users from './Components/Users';
 import AddUser from './Components/AddUser';
-
 import Mentors from './Components/Mentor/Mentor';
 import AddMentor from './Components/Mentor/AddMentor';
 import UpdateMentor from './Components/Mentor/UpdateMentor';
@@ -16,15 +15,42 @@ import NewStudent from './Components/NewStudent';
 function App() {
   const [students, setStudents] = useState([]);
   const [mentors, setMentors] = useState([]);
-  //const navigate = useNavigate()
+
+  useEffect(()=>{
+    const getMentorDetails = async()=>{
+      
+      const res = await fetch(`https://stud-ment-backend.onrender.com/mentors/all`, {       
+        method: "GET",
+    }); 
+      const data = await res.json();
+      //console.log(data.data)
+      setMentors(data.data)
+    }
+    
+      getMentorDetails()
+    
+  }, [])
+
+  useEffect(()=>{
+    const getStudentDetails = async()=>{
+      
+      const res = await fetch(`https://stud-ment-backend.onrender.com/students/all`, {       
+        method: "GET",
+    }); 
+      const data = await res.json();
+      //console.log(data.data)
+      setStudents(data.data)
+    }
+    
+      getStudentDetails()
+    
+  }, [])
   
 
 
   return (
     <div className="App">
-
-    
-    
+   
     <Switch>
 
       <Route exact path="/">
@@ -32,8 +58,7 @@ function App() {
               <div className='title-info'>
                 <h2>Welcome to our institution website...</h2>
               </div>
-             </Base>
-        
+             </Base>       
       </Route>
 
       <Route path="/students/all">
@@ -69,6 +94,7 @@ function App() {
         <NewStudent
           students={students}
           setStudents={setStudents}
+          mentors={mentors}
         />
       </Route>
 

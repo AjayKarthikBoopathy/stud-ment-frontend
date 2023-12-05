@@ -22,7 +22,7 @@ function AddMentor({mentors,setMentors}) {
             //console.log(newUser)
 
 
-          const res = await fetch(`http://localhost:9090/mentors/add`, {
+          const res = await fetch(`https://stud-ment-backend.onrender.com/mentors/add`, {
             method:"POST",
             body:JSON.stringify(newMentor),
             headers:{
@@ -43,23 +43,7 @@ function AddMentor({mentors,setMentors}) {
         }
       }
 
-
-    // const createUser = () => {
-    //     //creating object from input states
-    //     const newUser = {
-    //         name:name,
-    //         batch:batch,
-    //         gender,
-    //         education:qualification
-    //     }
-    //     //console.log(newUser)
-    //     setS([...userdata, newUser])
-    //     setName("")
-    //     setBatch("")
-    //     setGender("")
-    //     setQualification("")
-    //     history.push("/")
-    
+   
 
     return (
         <Base>

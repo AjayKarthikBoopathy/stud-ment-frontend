@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Base from "../Base/Base";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-//import data from './Data/data';
 
 
 function MyMentors({students,setStudents}) {
@@ -15,28 +14,9 @@ function MyMentors({students,setStudents}) {
        }
 
     
-
-    
-    
     const history = useHistory();
 
-    // useEffect(()=>{
-    //     const getMentorDetails = async()=>{
-          
-    //       const res = await fetch(`http://localhost:9090/mentors/all`, {       
-    //         method: "GET",
-    //     }); 
-    //       const data = await res.json();
-    //       //console.log(data.data)
-    //       setMentors(data.data)
-    //     }
-        
-    //       getMentorDetails()
-        
     
-    //   }, [])
-    
-
     
     return (
         <Base>
@@ -55,10 +35,7 @@ function MyMentors({students,setStudents}) {
                             
                             <h3 className="my-stud">{stud}</h3>
                         </div>
-                        
-
-                        
-                        
+                    
                   </div>
                   ))}
                 </div>
